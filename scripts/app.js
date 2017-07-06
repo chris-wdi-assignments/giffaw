@@ -15,6 +15,9 @@ $(document).on("ready", function () {
 function getGifs (res) {
   console.log(res);
   res.data.forEach(function (gif) {
-    $('<img>').attr('src', gif.url).appendTo('.gif-gallery');
+    $('<img>')
+      .attr('src', gif.images.fixed_height_small.url)
+      .attr('alt', 'yolo')
+      .appendTo('.gif-gallery');
   })
 }
