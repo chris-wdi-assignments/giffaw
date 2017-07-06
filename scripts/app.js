@@ -1,8 +1,6 @@
 $(document).on("ready", function () {
   $('form').on('submit', function (e) {
     e.preventDefault();
-    let subject = $('#query').val();
-    let apiKey = $('#apiKey').val();
     $.ajax({
       method: "GET",
       url: "https://api.giphy.com/v1/gifs/search",
@@ -13,7 +11,6 @@ $(document).on("ready", function () {
 });
 
 function getGifs (res) {
-  console.log(res);
   res.data.forEach(function (gif) {
     $('<img>')
       .attr('src', gif.images.fixed_height_small.url)
